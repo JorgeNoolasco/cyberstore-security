@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CyberStore Security | Central de prevenção contra malware</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="pular" href="#conteudo">Ir para o conteúdo</a>
+<header class="topo"><div class="in">
+  <div class="marca">CyberStore Security <small>Missão CyberDev • Dia 01</small></div>
+  <nav aria-label="Principal">
+    <a href="index.html" aria-current="page">Painel</a>
+    <a href="malware.html">Tipos de malware</a>
+  </nav>
+</div></header>
+
+<main id="conteudo">
+  <h1>Detetives do código malicioso</h1>
+  <p class="lead">A CyberStore suspeita que uma extensão instalada numa estação de desenvolvimento comprometeu arquivos do projeto. Este painel reúne o registro da estação, três ocorrências simuladas e o caminho para a central educativa.</p>
+  <p><a href="malware.html">Abrir a central de tipos de malware</a></p>
+  <p class="aviso"><strong>Protótipo educativo.</strong> Todos os dados são fictícios. Esta página não oferece proteção real nem certificação de segurança.</p>
+
+  <h2 id="estacao">1. Registro da estação de trabalho</h2>
+  <p>Os campos abaixo foram preenchidos pelo navegador quando possível. Complete os campos editáveis após a inspeção visual (ergonomia, cabos e ventilação), sem manipular instalações elétricas.</p>
+  <dl class="ficha" id="ficha">
+    <div><dt>Sistema operacional</dt><dd id="f-so">detectando…</dd></div>
+    <div><dt>Navegador</dt><dd id="f-nav">detectando…</dd></div>
+    <div><dt>CPU (núcleos lógicos)</dt><dd id="f-cpu">detectando…</dd></div>
+    <div><dt>RAM (aproximada)</dt><dd id="f-ram">detectando…</dd></div>
+    <div><dt>Processador (modelo)</dt><dd><input aria-label="Modelo do processador" placeholder="Preencher manualmente"></dd></div>
+    <div><dt>Armazenamento</dt><dd><input aria-label="Armazenamento" placeholder="Ex.: SSD 256 GB"></dd></div>
+    <div><dt>Ergonomia</dt><dd><input aria-label="Ergonomia" placeholder="Altura do monitor, cadeira…"></dd></div>
+    <div><dt>Cabos e ventilação</dt><dd><input aria-label="Cabos e ventilação" placeholder="Organizados? Entradas livres?"></dd></div>
+  </dl>
+
+  <h2 id="ocorrencias">2. Ocorrências simuladas</h2>
+  <p>Cada cartão traz um cenário fictício, a hipótese de diagnóstico e a reação recomendada.</p>
+
+  <article class="ocorrencia">
+    <h3>Ocorrência A: a extensão “Tema Bonito Pro” <span class="tag">Hipótese: Trojan</span></h3>
+    <span class="rotulo">Cenário</span>
+    <p>Uma pessoa da equipe baixou, de um site desconhecido, um arquivo de extensão para o VS Code que promete um tema novo. Antes de instalar, a equipe nota que o pacote pede acesso a todos os arquivos do workspace e a rede, e que o autor não tem histórico publicado.</p>
+    <span class="rotulo">Diagnóstico e justificativa</span>
+    <p>Trojan: o arquivo se apresenta como algo útil (um tema), mas as permissões pedidas não combinam com essa função. Um tema não precisa ler o projeto nem acessar a rede. Se fosse instalado, também poderia agir como spyware, lendo arquivos como <code>.env</code>.</p>
+    <span class="rotulo">Reação</span>
+    <p>Não instalar o arquivo. Verificar a procedência (loja oficial, autor, avaliações). Restringir permissões. Comunicar o instrutor ou responsável pela segurança. Se já tivesse sido instalado: desinstalar, trocar as credenciais do projeto e revisar os arquivos alterados.</p>
+  </article>
+
+  <article class="ocorrencia">
+    <h3>Ocorrência B: arquivos do projeto bloqueados <span class="tag">Hipótese: Ransomware</span></h3>
+    <span class="rotulo">Cenário</span>
+    <p>Ao abrir a pasta do projeto, os arquivos aparecem com a extensão <code>.bloqueado</code> e não abrem. Existe um arquivo <code>LEIA-ME.txt</code> pedindo um pagamento fictício para “devolver” os dados.</p>
+    <span class="rotulo">Diagnóstico e justificativa</span>
+    <p>Ransomware: há perda de acesso aos dados (disponibilidade) e um pedido de resgate, que são os dois sinais característicos desse tipo. A integridade também fica comprometida, porque os arquivos foram alterados.</p>
+    <span class="rotulo">Reação</span>
+    <p>Desconectar a máquina da rede para evitar a propagação. Não pagar o resgate. Comunicar o responsável. Restaurar o projeto a partir de um backup protegido e testado, depois de remover a causa e atualizar o sistema. Registrar o horário e os arquivos afetados.</p>
+  </article>
+
+  <article class="ocorrencia">
+    <h3>Ocorrência C: anúncios e página inicial alterada <span class="tag">Hipótese: Adware malicioso</span></h3>
+    <span class="rotulo">Cenário</span>
+    <p>Depois de instalar um “conversor de imagens gratuito”, o navegador passou a abrir janelas de propaganda, trocou a página inicial e ficou lento. Nenhum arquivo do projeto foi alterado.</p>
+    <span class="rotulo">Diagnóstico e justificativa</span>
+    <p>Adware malicioso é a hipótese mais provável: o problema começou após uma instalação, envolve publicidade invasiva e mudanças no navegador, e não há criptografia nem pedido de resgate. Os mesmos sintomas também poderiam vir de uma extensão de navegador maliciosa ou de um spyware. Por isso é uma hipótese, e não um diagnóstico definitivo.</p>
+    <span class="rotulo">Reação</span>
+    <p>Desinstalar o programa suspeito, remover extensões desconhecidas, restaurar as configurações do navegador, executar uma verificação com antivírus atualizado e trocar senhas digitadas nesse navegador, por precaução.</p>
+  </article>
+
+  <h2 id="testes">3. Registro de testes do filtro</h2>
+  <p>Os testes do filtro da página <a href="malware.html">Tipos de malware</a> estão documentados no arquivo <code>REGISTRO_DE_TESTES.md</code>, que acompanha o projeto. Inclua nele as capturas de tela dos testes feitos no navegador.</p>
+  <div class="rolagem"><table>
+    <thead><tr><th>Cenário</th><th>Entrada</th><th>Resultado esperado</th></tr></thead>
+    <tbody>
+      <tr><td>Termo existente</td><td><code>ransom</code></td><td>Mostra o cartão do Ransomware</td></tr>
+      <tr><td>Termo inexistente</td><td><code>xyz123</code></td><td>Mostra a mensagem “Nenhum resultado” e nenhum cartão</td></tr>
+      <tr><td>Campo vazio</td><td>(vazio)</td><td>Mostra os 10 cartões</td></tr>
+    </tbody>
+  </table></div>
+</main>
+<footer>Projeto educativo da turma. Dados fictícios. Não substitui ferramentas de proteção nem certificação.</footer>
+<script src="js/script.js"></script>
+</body>
+</html>

@@ -13,8 +13,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible,s
 .pular:focus{left:0;z-index:10}
 
 header.topo{background:var(--tinta);color:#fff;padding:1rem 1.25rem}
-header.topo .in{max-width:1440px;margin:auto;display:flex;flex-wrap:nowrap;gap:1rem 2rem;align-items:center;justify-content:space-between}
-.marca{font-weight:700;font-size:1.15rem;letter-spacing:.01em}
+header.topo .in{width:100%;max-width:1600px;margin:auto;display:flex;flex-wrap:nowrap;gap:1rem 2rem;align-items:center;justify-content:space-between}
+.marca{font-weight:700;font-size:1.15rem;letter-spacing:.01em;white-space:nowrap}
 .marca small{font-weight:400;opacity:.75;margin-left:.5rem}
 header.topo nav{display:flex;align-items:center;gap:1.5rem;flex-shrink:0}
 header.topo nav a{color:#fff;text-decoration:none;padding:.35rem 0;border-bottom:2px solid transparent;margin:0}
@@ -80,5 +80,5 @@ th{background:#E3E8EF}
 .rolagem{overflow-x:auto}
 footer{max-width:1080px;margin:auto;padding:1rem 1.25rem 2rem;color:var(--tinta-2);font-size:.9rem}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-@media (max-width:900px){header.topo .in{flex-wrap:wrap}header.topo nav{gap:1.25rem}}
+@media (max-width:1000px){header.topo .in{flex-wrap:wrap}header.topo nav{gap:1.25rem}}
 @media (max-width:560px){header.topo .in{align-items:flex-start}header.topo nav{flex-wrap:wrap;gap:.5rem 1rem}.busca input[type=search],.busca select{min-width:0;width:100%}.busca>div{width:100%}}

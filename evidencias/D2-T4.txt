@@ -1,0 +1,1 @@
+﻿Validado no JavaScript: após três credenciais inválidas consecutivas, botão é desabilitado e a mensagem informa como reiniciar o laboratório.

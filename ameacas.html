@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ameaças e acesso | CyberStore Security</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="pular" href="#conteudo">Ir para o conteúdo</a>
+<header class="topo"><div class="in">
+  <div class="marca">CyberStore Security <small>Missão CyberDev • Dia 02</small></div>
+  <nav aria-label="Principal">
+    <a href="index.html">Painel</a>
+    <a href="malware.html">Tipos de malware</a>
+    <a href="ameacas.html" aria-current="page">Ameaças e acesso</a>
+  </nav>
+</div></header>
+
+<main id="conteudo">
+  <h1>Ameaças e defesas da aplicação web</h1>
+  <p class="lead">Uma visão prática dos riscos para a CyberStore, com controles para proteger contas, pedidos e comunicação.</p>
+  <p class="aviso"><strong>Laboratório educativo:</strong> o login usa dados fictícios definidos no JavaScript e não autentica ninguém. O bloqueio pode ser reiniciado ao recarregar a página. Em produção, autenticação, limite de tentativas e autorização precisam ser aplicados no servidor.</p>
+
+  <h2 id="ameacas">1. Tabela de ameaças</h2>
+  <div class="rolagem"><table>
+    <thead><tr><th>Ameaça / causa</th><th>Ativo</th><th>Impacto (CID)</th><th>Controle recomendado</th></tr></thead>
+    <tbody>
+      <tr><td>Phishing / engenharia social: mensagem fraudulenta induz a pessoa a revelar credenciais.</td><td>Contas, dados de clientes</td><td>Confidencialidade e integridade</td><td>Treinamento, MFA, verificação de remetente e canal alternativo para confirmar solicitações.</td></tr>
+      <tr><td>Força bruta: muitas senhas são testadas contra uma conta.</td><td>Contas e sessão</td><td>Confidencialidade</td><td>Limite de tentativas no servidor, atrasos progressivos, MFA e alertas.</td></tr>
+      <tr><td>Credential stuffing: credenciais vazadas em outro serviço são reutilizadas.</td><td>Contas e pedidos</td><td>Confidencialidade e integridade</td><td>MFA, detecção de automação, senhas únicas e proteção contra tentativas automatizadas.</td></tr>
+      <tr><td>SQL Injection: entrada não parametrizada altera a consulta ao banco.</td><td>Banco de dados e pedidos</td><td>Confidencialidade, integridade e disponibilidade</td><td>Consultas parametrizadas, validação no servidor e privilégio mínimo no banco.</td></tr>
+      <tr><td>XSS: conteúdo não confiável é inserido na página sem codificação adequada.</td><td>Navegador, sessão e dados exibidos</td><td>Confidencialidade e integridade</td><td>Codificação de saída, sanitização contextual e política CSP.</td></tr>
+      <tr><td>CSRF: navegador autenticado é induzido a enviar uma ação não desejada.</td><td>Conta, endereço e pedidos</td><td>Integridade</td><td>Tokens CSRF, cookies SameSite e validação de origem no servidor.</td></tr>
+      <tr><td>Falha de autorização: servidor não confirma se o usuário pode acessar aquele pedido.</td><td>Pedidos e dados pessoais</td><td>Confidencialidade e integridade</td><td>Verificar identidade e permissão do recurso em cada requisição no servidor.</td></tr>
+      <tr><td>DoS / DDoS: volume de solicitações esgota recursos de um serviço.</td><td>Loja e API</td><td>Disponibilidade</td><td>Limites de taxa, monitoramento, proteção de borda e plano de resposta.</td></tr>
+      <tr><td>Interceptação: comunicação sem proteção permite observar ou alterar dados em trânsito.</td><td>Credenciais, sessão e pedidos</td><td>Confidencialidade e integridade</td><td>HTTPS com TLS, cookies Secure e HSTS.</td></tr>
+      <tr><td>Ameaça acidental: falha de hardware/energia, erro humano ou configuração incorreta.</td><td>Serviço, dados e backups</td><td>Disponibilidade e integridade</td><td>Backups testados, redundância, revisão de mudanças e procedimentos operacionais.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h2 id="login">2. Simulação de login</h2>
+  <p>Credenciais fictícias para este exercício: <code>cliente@exemplo.test</code> / <code>Cliente123!</code> e <code>admin@exemplo.test</code> / <code>Admin123!</code>. Após três falhas, o formulário fica bloqueado até reiniciar o laboratório (recarregar esta página).</p>
+  <form class="login-demo" id="login-form" novalidate>
+    <div><label for="login-email">E-mail fictício</label><input id="login-email" name="email" type="email" autocomplete="username" required></div>
+    <div><label for="login-senha">Senha fictícia</label><input id="login-senha" name="senha" type="password" autocomplete="current-password" required></div>
+    <button type="submit" id="login-submit">Entrar no laboratório</button>
+  </form>
+  <p id="login-status" role="status" aria-live="polite"></p>
+
+  <h2 id="permissoes">3. Matriz de permissões</h2>
+  <div class="rolagem"><table>
+    <thead><tr><th>Ação</th><th>Cliente</th><th>Administrador</th><th>Verificação obrigatória no servidor</th></tr></thead>
+    <tbody>
+      <tr><td>Ver catálogo</td><td>Permitido</td><td>Permitido</td><td>Recurso público; limitar dados e registrar erros.</td></tr>
+      <tr><td>Ver pedido</td><td>Apenas os próprios</td><td>Permitido conforme função</td><td>Validar sessão e comparar o identificador do cliente do pedido com a identidade autenticada; não confiar no ID enviado pelo navegador.</td></tr>
+      <tr><td>Alterar pedido</td><td>Não permitido após confirmação</td><td>Permitido conforme política</td><td>Validar papel, estado do pedido e registrar auditoria em cada requisição.</td></tr>
+      <tr><td>Gerenciar produtos</td><td>Não permitido</td><td>Permitido</td><td>Exigir papel administrativo verificado no servidor; negar por padrão.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h2 id="testes-dia02">4. Registro de testes</h2>
+  <p>Resultados descritos para a simulação local desta página. As evidências de captura de tela devem ser feitas no navegador pela equipe antes da entrega.</p>
+  <div class="rolagem"><table>
+    <thead><tr><th>Cenário</th><th>Resultado esperado</th><th>Resultado obtido</th><th>Evidência</th></tr></thead>
+    <tbody>
+      <tr><td>Campos vazios</td><td>Navegador impede envio por campos obrigatórios.</td><td>Validado: formulário pede os campos obrigatórios.</td><td>evidencias/D2-T1.txt</td></tr>
+      <tr><td>Login inválido</td><td>Mensagem genérica e contador de tentativas.</td><td>Validado: credenciais incorretas exibem erro e número da tentativa.</td><td>evidencias/D2-T2.txt</td></tr>
+      <tr><td>Login fictício válido</td><td>Mensagem de sucesso com papel atribuído.</td><td>Validado: conta de cliente recebe confirmação com o papel.</td><td>evidencias/D2-T3.txt</td></tr>
+      <tr><td>Limite atingido</td><td>Após três falhas, login bloqueado.</td><td>Validado: terceira falha desabilita o botão.</td><td>evidencias/D2-T4.txt</td></tr>
+      <tr><td>Acesso sem permissão</td><td>Cliente não pode ver pedido alheio nem administrar produtos.</td><td>Cenário documentado na matriz; requer autorização real no servidor, não implementada neste protótipo estático.</td><td>evidencias/D2-T5.txt</td></tr>
+    </tbody>
+  </table></div>
+</main>
+<footer>Projeto educativo da turma. Dados e credenciais fictícios. Não substitui controles implementados e verificados no servidor.</footer>
+<script src="js/ameacas.js"></script>
+</body>
+</html>

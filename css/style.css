@@ -37,6 +37,12 @@ h3{font-size:1.1rem;margin:0 0 .35rem}
 .busca input[type=search],.busca select{font:inherit;padding:.55rem .7rem;border:1px solid var(--tinta-2);background:#fff;min-width:240px}
 .busca button{font:inherit;padding:.6rem 1rem;border:1px solid var(--tinta);background:var(--tinta);color:#fff;cursor:pointer}
 .busca button.sec{background:#fff;color:var(--tinta)}
+.login-demo{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.75rem;align-items:end;background:var(--painel);border:1px solid var(--linha);padding:1rem;margin:1rem 0;max-width:760px}
+.login-demo label{display:block;font-weight:600;margin-bottom:.25rem}
+.login-demo input{width:100%;font:inherit;padding:.55rem .7rem;border:1px solid var(--tinta-2);background:#fff}
+.login-demo button{font:inherit;padding:.6rem 1rem;border:1px solid var(--tinta);background:var(--tinta);color:#fff;cursor:pointer}
+.login-demo button:disabled{opacity:.65;cursor:not-allowed}
+#login-status{min-height:1.6em;font-weight:600}
 #status{margin:.5rem 0 1rem;font-weight:600}
 #vazio{background:var(--painel);border:2px dashed var(--linha);padding:1.25rem;display:none}
 

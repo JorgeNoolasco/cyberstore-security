@@ -1,0 +1,1 @@
+﻿Validado com simulação de formulário inválido: reportValidity() impede seguir e apresenta orientação para preencher os campos obrigatórios. O navegador real ainda deve ser conferido pela equipe.

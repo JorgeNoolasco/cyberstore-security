@@ -1,0 +1,1 @@
+﻿Validado no JavaScript: cliente@exemplo.test / Cliente123! recebe confirmação do papel cliente. Nenhum dado real é consultado.

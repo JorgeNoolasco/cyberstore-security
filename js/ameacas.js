@@ -41,4 +41,17 @@
 
     status.textContent = `Credenciais fictícias inválidas. Tentativa ${falhas} de ${tentativasMaximas}.`;
   });
+
+  const recuperacaoForm = document.getElementById("recuperacao-form");
+  if (recuperacaoForm) {
+    recuperacaoForm.addEventListener("submit", (evento) => {
+      evento.preventDefault();
+      const statusRecuperacao = document.getElementById("recuperacao-status");
+      if (!recuperacaoForm.reportValidity()) {
+        statusRecuperacao.textContent = "Informe um endereço de e-mail válido.";
+        return;
+      }
+      statusRecuperacao.textContent = "Se houver uma conta associada a este e-mail, as instruções de recuperação serão enviadas.";
+    });
+  }
 })();

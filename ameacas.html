@@ -59,7 +59,23 @@
     </tbody>
   </table></div>
 
-  <h2 id="testes-dia02">4. Registro de testes</h2>
+  <h2 id="recuperacao">4. Recuperação de conta (simulação)</h2>
+  <p>Informe um e-mail fictício. A interface sempre mostra a mesma resposta, sem confirmar se existe uma conta. Nenhuma mensagem é enviada neste protótipo.</p>
+  <form class="login-demo" id="recuperacao-form" novalidate>
+    <div><label for="recuperacao-email">E-mail cadastrado</label><input id="recuperacao-email" name="email" type="email" autocomplete="email" required></div>
+    <button type="submit">Solicitar recuperação</button>
+  </form>
+  <p id="recuperacao-status" role="status" aria-live="polite"></p>
+
+  <h3>Como proteger esse fluxo no servidor</h3>
+  <ul>
+    <li>Responder sempre com uma mensagem genérica, como “Se houver uma conta associada, enviaremos as instruções”, tanto para e-mails existentes quanto inexistentes.</li>
+    <li>Limitar requisições por IP e por identificador de conta com uma janela de tempo, armazenando contadores em serviço compartilhado entre instâncias. Ao exceder o limite, aplicar espera ou resposta HTTP 429 sem revelar se a conta existe.</li>
+    <li>Gerar um token aleatório, de uso único e curta validade; armazenar apenas seu hash e invalidá-lo após uso ou expiração. Não enviar senha por e-mail.</li>
+    <li>Registrar e monitorar tentativas sem guardar tokens ou expor dados pessoais nos logs. A tela local não implementa esses controles.</li>
+  </ul>
+
+  <h2 id="testes-dia02">5. Registro de testes</h2>
   <p>Resultados descritos para a simulação local desta página. As evidências de captura de tela devem ser feitas no navegador pela equipe antes da entrega.</p>
   <div class="rolagem"><table>
     <thead><tr><th>Cenário</th><th>Resultado esperado</th><th>Resultado obtido</th><th>Evidência</th></tr></thead>

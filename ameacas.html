@@ -14,6 +14,7 @@
     <a href="index.html">Painel</a>
     <a href="malware.html">Tipos de Malware</a>
     <a href="ameacas.html" aria-current="page">Ameaças e Acesso</a>
+    <a href="gestao-riscos.html">Gestão de Riscos</a>
   </nav>
 </div></header>
 
@@ -24,27 +25,28 @@
 
   <h2 id="ameacas">1. Tabela de ameaças</h2>
   <div class="rolagem"><table>
-    <thead><tr><th>Ameaça / causa</th><th>Ativo</th><th>Impacto (CID)</th><th>Controle recomendado</th></tr></thead>
+    <thead><tr><th>Ameaça</th><th>Causa</th><th>Ativo</th><th>Impacto (CID)</th><th>Controle recomendado</th></tr></thead>
     <tbody>
-      <tr><td>Phishing / engenharia social: mensagem fraudulenta induz a pessoa a revelar credenciais.</td><td>Contas, dados de clientes</td><td>Confidencialidade e integridade</td><td>Treinamento, MFA, verificação de remetente e canal alternativo para confirmar solicitações.</td></tr>
-      <tr><td>Força bruta: muitas senhas são testadas contra uma conta.</td><td>Contas e sessão</td><td>Confidencialidade</td><td>Limite de tentativas no servidor, atrasos progressivos, MFA e alertas.</td></tr>
-      <tr><td>Credential stuffing: credenciais vazadas em outro serviço são reutilizadas.</td><td>Contas e pedidos</td><td>Confidencialidade e integridade</td><td>MFA, detecção de automação, senhas únicas e proteção contra tentativas automatizadas.</td></tr>
-      <tr><td>SQL Injection: entrada não parametrizada altera a consulta ao banco.</td><td>Banco de dados e pedidos</td><td>Confidencialidade, integridade e disponibilidade</td><td>Consultas parametrizadas, validação no servidor e privilégio mínimo no banco.</td></tr>
-      <tr><td>XSS: conteúdo não confiável é inserido na página sem codificação adequada.</td><td>Navegador, sessão e dados exibidos</td><td>Confidencialidade e integridade</td><td>Codificação de saída, sanitização contextual e política CSP.</td></tr>
-      <tr><td>CSRF: navegador autenticado é induzido a enviar uma ação não desejada.</td><td>Conta, endereço e pedidos</td><td>Integridade</td><td>Tokens CSRF, cookies SameSite e validação de origem no servidor.</td></tr>
-      <tr><td>Falha de autorização: servidor não confirma se o usuário pode acessar aquele pedido.</td><td>Pedidos e dados pessoais</td><td>Confidencialidade e integridade</td><td>Verificar identidade e permissão do recurso em cada requisição no servidor.</td></tr>
-      <tr><td>DoS / DDoS: volume de solicitações esgota recursos de um serviço.</td><td>Loja e API</td><td>Disponibilidade</td><td>Limites de taxa, monitoramento, proteção de borda e plano de resposta.</td></tr>
-      <tr><td>Interceptação: comunicação sem proteção permite observar ou alterar dados em trânsito.</td><td>Credenciais, sessão e pedidos</td><td>Confidencialidade e integridade</td><td>HTTPS com TLS, cookies Secure e HSTS.</td></tr>
-      <tr><td>Ameaça acidental: falha de hardware/energia, erro humano ou configuração incorreta.</td><td>Serviço, dados e backups</td><td>Disponibilidade e integridade</td><td>Backups testados, redundância, revisão de mudanças e procedimentos operacionais.</td></tr>
+      <tr><td>Phishing / engenharia social</td><td>mensagem fraudulenta induz a pessoa a revelar credenciais.</td><td>Contas, dados de clientes</td><td>Confidencialidade e integridade</td><td>Treinamento, MFA, verificação de remetente e canal alternativo para confirmar solicitações.</td></tr>
+      <tr><td>Força bruta</td><td>muitas senhas são testadas contra uma conta.</td><td>Contas e sessão</td><td>Confidencialidade</td><td>Limite de tentativas no servidor, atrasos progressivos, MFA e alertas.</td></tr>
+      <tr><td>Credential stuffing</td><td>credenciais vazadas em outro serviço são reutilizadas.</td><td>Contas e pedidos</td><td>Confidencialidade e integridade</td><td>MFA, detecção de automação, senhas únicas e proteção contra tentativas automatizadas.</td></tr>
+      <tr><td>SQL Injection</td><td>entrada não parametrizada altera a consulta ao banco.</td><td>Banco de dados e pedidos</td><td>Confidencialidade, integridade e disponibilidade</td><td>Consultas parametrizadas, validação no servidor e privilégio mínimo no banco.</td></tr>
+      <tr><td>XSS</td><td>conteúdo não confiável é inserido na página sem codificação adequada.</td><td>Navegador, sessão e dados exibidos</td><td>Confidencialidade e integridade</td><td>Codificação de saída, sanitização contextual e política CSP.</td></tr>
+      <tr><td>CSRF</td><td>navegador autenticado é induzido a enviar uma ação não desejada.</td><td>Conta, endereço e pedidos</td><td>Integridade</td><td>Tokens CSRF, cookies SameSite e validação de origem no servidor.</td></tr>
+      <tr><td>Falha de autorização</td><td>servidor não confirma se o usuário pode acessar aquele pedido.</td><td>Pedidos e dados pessoais</td><td>Confidencialidade e integridade</td><td>Verificar identidade e permissão do recurso em cada requisição no servidor.</td></tr>
+      <tr><td>DoS / DDoS</td><td>volume de solicitações esgota recursos de um serviço.</td><td>Loja e API</td><td>Disponibilidade</td><td>Limites de taxa, monitoramento, proteção de borda e plano de resposta.</td></tr>
+      <tr><td>Interceptação</td><td>comunicação sem proteção permite observar ou alterar dados em trânsito.</td><td>Credenciais, sessão e pedidos</td><td>Confidencialidade e integridade</td><td>HTTPS com TLS, cookies Secure e HSTS.</td></tr>
+      <tr><td>Ameaça acidental</td><td>falha de hardware/energia, erro humano ou configuração incorreta.</td><td>Serviço, dados e backups</td><td>Disponibilidade e integridade</td><td>Backups testados, redundância, revisão de mudanças e procedimentos operacionais.</td></tr>
     </tbody>
   </table></div>
 
   <h2 id="login">2. Simulação de login</h2>
-  <p>Credenciais fictícias para este exercício: <code>cliente@exemplo.test</code> / <code>Cliente123!</code> e <code>admin@exemplo.test</code> / <code>Admin123!</code>. Após três falhas, o formulário fica bloqueado até reiniciar o laboratório (recarregar esta página).</p>
+  <p>Credenciais fictícias para este exercício: <code>cliente@exemplo.test</code> / <code>Cliente123!</code> e <code>admin@exemplo.test</code> / <code>Admin123!</code>. Após três falhas, use o botão para reiniciar a simulação.</p>
   <form class="login-demo" id="login-form" novalidate>
     <div><label for="login-email">E-mail fictício</label><input id="login-email" name="email" type="email" autocomplete="username" required></div>
     <div><label for="login-senha">Senha fictícia</label><input id="login-senha" name="senha" type="password" autocomplete="current-password" required></div>
     <button type="submit" id="login-submit">Entrar no laboratório</button>
+    <button type="button" class="sec" id="login-reset">Reiniciar simulação</button>
   </form>
   <p id="login-status" role="status" aria-live="polite"></p>
 
@@ -58,6 +60,15 @@
       <tr><td>Gerenciar produtos</td><td>Não permitido</td><td>Permitido</td><td>Exigir papel administrativo verificado no servidor; negar por padrão.</td></tr>
     </tbody>
   </table></div>
+
+  <h3>Teste educativo de autorização</h3>
+  <p>Esta demonstração usa regras locais e não acessa pedidos nem produtos reais. Em uma aplicação, a decisão precisa ser repetida no servidor.</p>
+  <form class="login-demo" id="permissao-form">
+    <div><label for="perfil-teste">Perfil fictício</label><select id="perfil-teste"><option value="cliente">Cliente</option><option value="administrador">Administrador</option></select></div>
+    <div><label for="acao-teste">Ação simulada</label><select id="acao-teste"><option value="catalogo">Consultar catálogo</option><option value="pedido-proprio">Consultar pedido próprio</option><option value="pedido-alheio">Consultar pedido de outra pessoa</option><option value="produto">Gerenciar produtos</option></select></div>
+    <button type="submit">Verificar permissão</button>
+  </form>
+  <p id="permissao-status" role="status" aria-live="polite"></p>
 
   <h2 id="recuperacao">4. Recuperação de conta (simulação)</h2>
   <p>Informe um e-mail fictício. A interface sempre mostra a mesma resposta, sem confirmar se existe uma conta. Nenhuma mensagem é enviada neste protótipo.</p>

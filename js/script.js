@@ -90,7 +90,7 @@ const MALWARES = [
     prevencao:"Revisar contas e portas abertas, revisar dependências, firewall e registro de acessos.",
     recuperacao:"Fechar o acesso, trocar credenciais, revisar o código e reinstalar a partir de fonte confiável." },
 
-  { id:"bot", nome:"Bot malicioso", categoria:"Automação e publicidade",
+  { id:"botnet", nome:"Botnet", categoria:"Automação e publicidade",
     resumo:"Automação prejudicial que executa tarefas sem consentimento, em geral em rede (botnet).",
     funcionamento:"A máquina infectada recebe ordens remotas, como enviar spam, atacar sites ou minerar.",
     disseminacao:"Trojans, falhas sem correção e senhas fracas em dispositivos conectados.",

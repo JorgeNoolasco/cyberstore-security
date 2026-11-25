@@ -12,6 +12,20 @@
   ];
   const status = document.getElementById("login-status");
   const botao = document.getElementById("login-submit");
+  const contador = document.createElement("p");
+  contador.id = "login-counter";
+  contador.setAttribute("aria-live", "polite");
+  form.after(contador);
+  contador.textContent = `Tentativas inválidas: ${falhas} de ${tentativasMaximas}.`;
+
+  document.getElementById("login-reset")?.addEventListener("click", () => {
+    falhas = 0;
+    bloqueado = false;
+    botao.disabled = false;
+    form.reset();
+    status.textContent = "Simulação reiniciada. Você pode tentar novamente.";
+    contador.textContent = `Tentativas inválidas: ${falhas} de ${tentativasMaximas}.`;
+  });
 
   form.addEventListener("submit", (evento) => {
     evento.preventDefault();
@@ -32,6 +46,7 @@
     }
 
     falhas += 1;
+    contador.textContent = `Tentativas inválidas: ${falhas} de ${tentativasMaximas}.`;
     if (falhas >= tentativasMaximas) {
       bloqueado = true;
       botao.disabled = true;
@@ -54,4 +69,15 @@
       statusRecuperacao.textContent = "Se houver uma conta associada a este e-mail, as instruções de recuperação serão enviadas.";
     });
   }
+
+  const permissaoForm = document.getElementById("permissao-form");
+  if (permissaoForm) permissaoForm.addEventListener("submit", (evento) => {
+    evento.preventDefault();
+    const perfil = document.getElementById("perfil-teste").value;
+    const acao = document.getElementById("acao-teste").value;
+    const permitido = acao === "catalogo" || acao === "pedido-proprio" || (perfil === "administrador" && ["pedido-alheio", "produto"].includes(acao));
+    document.getElementById("permissao-status").textContent = permitido
+      ? "Simulação: ação permitida para este perfil. A verificação real deve ocorrer no servidor."
+      : "Simulação: acesso negado por falta de permissão. Nenhum recurso foi acessado.";
+  });
 })();

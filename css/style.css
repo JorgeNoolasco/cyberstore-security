@@ -79,6 +79,16 @@ th,td{border:1px solid var(--linha);padding:.5rem .6rem;text-align:left;vertical
 th{background:#E3E8EF}
 .rolagem{overflow-x:auto}
 footer{max-width:1080px;margin:auto;padding:1rem 1.25rem 2rem;color:var(--tinta-2);font-size:.9rem}
+.topo nav a{white-space:nowrap}
+.topo nav{flex-wrap:wrap}
+.metricas{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:.65rem;margin:1rem 0}
+.metrica,.painel,.form-painel{background:var(--painel);border:1px solid var(--linha);padding:1rem}
+.metrica{display:grid;gap:.15rem}.metrica span{color:var(--tinta-2);font-size:.9rem}.metrica strong{font-size:1.65rem;line-height:1.2}
+.graficos{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:1rem}
+.grafico{display:grid;gap:.7rem;margin-top:.8rem}.barra-topo{display:flex;justify-content:space-between;gap:1rem}.trilho{height:12px;background:#e3e8ef;border-radius:8px;overflow:hidden}.trilho i{display:block;height:100%;border-radius:8px}
+.form-painel{margin:1rem 0}.campos{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:.75rem}.campos label{display:grid;gap:.25rem;font-weight:600}.campos input,.campos select,.campos textarea{width:100%;font:inherit;padding:.5rem .65rem;border:1px solid var(--tinta-2);background:#fff;color:var(--tinta)}.campos textarea{resize:vertical}.campos .largo,.pontuacao{grid-column:1/-1}.pontuacao{font-weight:700;margin:0;padding:.6rem;background:#e8f4f1;border-left:4px solid var(--acento)}
+.acoes{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.8rem}.acoes button,.rolagem button{font:inherit;padding:.45rem .8rem;border:1px solid var(--tinta);background:var(--tinta);color:#fff;cursor:pointer;margin:.1rem}.acoes .sec,.rolagem button.sec{background:#fff;color:var(--tinta)}.mensagem{min-height:1.5em;font-weight:600;margin:.5rem 0 0}.pdca{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:.8rem}.pdca article{background:var(--painel);border:1px solid var(--linha);border-top:5px solid var(--acento);padding:1rem}.pdca p{margin:.25rem 0 0}
+@media(max-width:560px){header.topo nav{width:100%;gap:.25rem .85rem}.topo nav a{font-size:.92rem}.rolagem table{min-width:680px}.acoes button{flex:1}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 @media (max-width:1000px){header.topo .in{flex-wrap:wrap}header.topo nav{gap:1.25rem}}
 @media (max-width:560px){header.topo .in{align-items:flex-start}header.topo nav{flex-wrap:wrap;gap:.5rem 1rem}.busca input[type=search],.busca select{min-width:0;width:100%}.busca>div{width:100%}}

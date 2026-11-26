@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Controles de segurança | CyberStore Security</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="pular" href="#conteudo">Ir para o conteúdo</a>
+  <header class="topo"><div class="in">
+    <div class="marca">CyberStore Security <small>Missão CyberDev • Dia 04</small></div>
+    <nav aria-label="Principal">
+      <a href="index.html">Painel</a><a href="malware.html">Tipos de Malware</a>
+      <a href="ameacas.html">Ameaças e Acesso</a><a href="gestao-riscos.html">Gestão de Riscos</a>
+      <a href="controles-seguranca.html" aria-current="page">Controles de Segurança</a>
+    </nav>
+  </div></header>
+  <main id="conteudo">
+    <h1>Controles de segurança da CyberStore</h1>
+    <p class="lead">Transforme os riscos identificados em medidas com responsáveis, status e evidências que possam ser conferidas.</p>
+    <p class="aviso"><strong>Simulação acadêmica.</strong> ISO/IEC 27002:2022 oferece orientações sobre controles; não é uma norma de certificação. Os dados e exercícios desta página são fictícios, ficam neste navegador e não comprovam proteção de um sistema real.</p>
+
+    <section aria-labelledby="conceito-titulo">
+      <h2 id="conceito-titulo">Como usar este painel</h2>
+      <p>A ISO/IEC 27002 organiza orientações em quatro categorias: organizacionais, pessoas, físicas e tecnológicas. A ISO/IEC 27001 define requisitos para um sistema de gestão de segurança da informação (SGSI); a 27002 ajuda a orientar a seleção e aplicação de controles. A escolha deve considerar o contexto e os riscos da organização.</p>
+      <p>Um controle <strong>planejado</strong> tem uma ação definida. Um controle <strong>demonstrado</strong> tem registro de que a ação foi executada ou testada. O status demonstrado neste protótipo é apenas um registro didático.</p>
+    </section>
+
+    <section aria-labelledby="indicadores-titulo">
+      <h2 id="indicadores-titulo">Desafio avançado: acompanhamento automático</h2>
+      <p>Atualize o status dos controles e registre evidências fictícias. Os indicadores são recalculados automaticamente e as alterações ficam salvas neste navegador; não representam um índice oficial de conformidade.</p>
+      <div id="indicadores-controles" class="metricas" aria-live="polite"></div>
+    </section>
+
+    <section aria-labelledby="catalogo-titulo">
+      <h2 id="catalogo-titulo">Catálogo de controles</h2>
+      <p>Atualize o status e registre uma evidência fictícia ao demonstrar uma medida. As relações com riscos apontam para os exemplos do Dia 03.</p>
+      <div id="controles-categorias"></div>
+    </section>
+
+    <section aria-labelledby="permissoes-titulo">
+      <h2 id="permissoes-titulo">Matriz de permissões</h2>
+      <p>Exemplo de acesso mínimo para funções da loja. Uma aplicação real deve validar cada permissão no servidor.</p>
+      <div class="rolagem"><table>
+        <thead><tr><th>Recurso / ação</th><th>Cliente</th><th>Suporte</th><th>Administrador</th><th>Regra de verificação</th></tr></thead>
+        <tbody>
+          <tr><td>Consultar catálogo</td><td>Permitido</td><td>Permitido</td><td>Permitido</td><td>Conteúdo público; limitar informações expostas.</td></tr>
+          <tr><td>Consultar pedido</td><td>Próprio</td><td>Conforme solicitação autorizada</td><td>Conforme função</td><td>Comparar a identidade autenticada com o titular do pedido em cada requisição.</td></tr>
+          <tr><td>Alterar pedido</td><td>Não permitido</td><td>Conforme fluxo aprovado</td><td>Conforme política</td><td>Validar papel, estado do pedido e registrar a alteração.</td></tr>
+          <tr><td>Gerenciar produtos e contas</td><td>Não permitido</td><td>Não permitido</td><td>Permitido</td><td>Exigir papel administrativo, MFA e auditoria no servidor.</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section aria-labelledby="backup-titulo">
+      <h2 id="backup-titulo">Exercício de backup e restauração</h2>
+      <p>O exercício cria um arquivo de texto fictício, guarda uma cópia temporária neste navegador e confere se o conteúdo pode ser restaurado. Não envia dados para nenhum servidor. Testar um arquivo não comprova a recuperação de um banco de dados real.</p>
+      <div class="painel">
+        <p><strong>Arquivo de exemplo:</strong> <code>catalogo-ficticio.txt</code></p>
+        <pre id="backup-conteudo">Produto fictício: Caderno Aurora
+Preço de demonstração: R$ 25,00
+Sem dados de clientes ou pedidos.</pre>
+        <div class="acoes"><button type="button" id="backup-criar">Criar cópia de segurança</button><button type="button" id="backup-restaurar" class="sec">Testar restauração</button></div>
+        <p id="backup-status" class="mensagem" role="status" aria-live="polite">Nenhum teste executado nesta sessão.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="eventos-titulo">
+      <h2 id="eventos-titulo">Registros de eventos simulados</h2>
+      <p>Exemplos de rastreabilidade. Não representam eventos reais nem armazenam dados pessoais.</p>
+      <div class="rolagem"><table><thead><tr><th>Data e hora</th><th>Evento</th><th>Ator fictício</th><th>Resultado</th></tr></thead>
+        <tbody id="eventos-lista"></tbody></table></div>
+    </section>
+
+    <section aria-labelledby="auditoria-titulo">
+      <h2 id="auditoria-titulo">Auditoria cruzada didática</h2>
+      <p>Registre duas melhorias sugeridas por outra equipe. Use comentários sem dados reais.</p>
+      <form id="auditoria-form" class="form-painel">
+        <div class="campos"><label>Melhoria sugerida 1<textarea id="melhoria-1" required maxlength="240" rows="2"></textarea></label>
+          <label>Melhoria sugerida 2<textarea id="melhoria-2" required maxlength="240" rows="2"></textarea></label>
+          <label>Equipe revisora<input id="equipe-revisora" maxlength="80" placeholder="Ex.: Equipe B"></label></div>
+        <div class="acoes"><button type="submit">Salvar registro</button><button type="button" class="sec" id="auditoria-limpar">Limpar</button></div>
+        <p id="auditoria-status" class="mensagem" role="status" aria-live="polite"></p>
+      </form>
+      <div id="auditoria-registro" class="painel" aria-live="polite"></div>
+    </section>
+
+    <section aria-labelledby="referencias-titulo">
+      <h2 id="referencias-titulo">Referências para pesquisa</h2>
+      <ul>
+        <li><a href="https://www.iso.org/standard/75652.html" target="_blank" rel="noopener noreferrer">ISO/IEC 27002:2022 — Information security controls</a></li>
+        <li><a href="https://www.iso.org/standard/27001" target="_blank" rel="noopener noreferrer">ISO/IEC 27001 — Information security management systems</a></li>
+        <li><a href="https://owasp.org/" target="_blank" rel="noopener noreferrer">OWASP — recursos de segurança para aplicações web</a></li>
+      </ul>
+      <p>Para o relatório da equipe, complemente com pelo menos três fontes confiáveis e anote título, endereço e data de acesso.</p>
+    </section>
+
+    <section aria-labelledby="testes-titulo">
+      <h2 id="testes-titulo">Registro de testes e evidências</h2>
+      <div class="rolagem"><table><thead><tr><th>Cenário</th><th>Resultado esperado</th><th>Resultado obtido no protótipo</th><th>Evidência a registrar</th></tr></thead><tbody>
+        <tr><td>Atualizar status de controle</td><td>Indicadores refletem status e valor persiste ao recarregar.</td><td>Interação local; confirme no navegador durante a apresentação.</td><td>Captura do controle e dos indicadores.</td></tr>
+        <tr><td>Backup e restauração do arquivo fictício</td><td>Cópia criada e conteúdo restaurado igual ao original.</td><td>Executar os dois botões e registrar o resultado exibido.</td><td>Captura do resultado do exercício.</td></tr>
+        <tr><td>Permissões da matriz</td><td>Acesso limitado por função e verificado no servidor em produção.</td><td>Matriz documentada; não há autenticação nem servidor neste protótipo.</td><td>Captura da matriz e anotação da limitação.</td></tr>
+        <tr><td>Auditoria cruzada</td><td>Duas melhorias e equipe revisora ficam registradas localmente.</td><td>Preencher e salvar o formulário durante a atividade.</td><td>Captura do registro com as duas sugestões.</td></tr>
+      </tbody></table></div>
+    </section>
+  </main>
+  <footer>Projeto educativo da dupla. Dados e credenciais fictícios para fins educativos.<br>Feito por Jorge Victor e Maria Antonia.</footer>
+  <script src="js/controles-seguranca.js"></script>
+</body>
+</html>

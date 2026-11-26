@@ -1,20 +1,183 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Gestão de Riscos | CyberStore Security</title><link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gestão de Riscos | CyberStore Security</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-<a class="pular" href="#conteudo">Ir para o conteúdo</a>
-<header class="topo"><div class="in"><div class="marca">CyberStore Security <small>Missão CyberDev • Dia 03</small></div>
-<nav aria-label="Principal"><a href="index.html">Painel</a><a href="malware.html">Tipos de Malware</a><a href="ameacas.html">Ameaças e Acesso</a><a href="gestao-riscos.html" aria-current="page">Gestão de Riscos</a></nav></div></header>
-<main id="conteudo">
-<h1>Gestão de riscos da informação</h1><p class="lead">Painel educativo para inventariar ativos, avaliar riscos e acompanhar ações de tratamento da CyberStore.</p>
-<p class="aviso"><strong>Simulação acadêmica.</strong> Os dados são fictícios e ficam neste navegador. Este projeto não representa uma certificação ISO/IEC 27001.</p>
-<section aria-labelledby="indicadores-titulo"><h2 id="indicadores-titulo">Painel de acompanhamento</h2><div id="metricas" class="metricas" aria-live="polite"></div><div class="graficos"><article class="painel"><h3>Riscos por classificação</h3><div id="grafico-riscos" class="grafico" role="img" aria-label="Gráfico de riscos por classificação"></div></article><article class="painel"><h3>Tratamentos por status</h3><div id="grafico-status" class="grafico" role="img" aria-label="Gráfico de tratamentos por status"></div></article></div></section>
-<section><h2>Escopo do SGSI</h2><p>O escopo educativo cobre a aplicação web CyberStore, banco de dados, servidor, repositório de código, contas de usuários e infraestrutura de rede usados para operar e manter a loja.</p><h3>Objetivos de segurança da informação</h3><ul><li><strong>Confidencialidade:</strong> restringir dados de clientes e credenciais a pessoas autorizadas.</li><li><strong>Integridade:</strong> manter código, pedidos e cadastros corretos e protegidos contra alterações indevidas.</li><li><strong>Disponibilidade:</strong> manter a aplicação e os dados acessíveis, com cópias de segurança verificadas.</li></ul></section>
-<section><h2>Inventário de ativos</h2><p>Cadastre, edite ou remova ativos. Os cinco ativos iniciais são exemplos fictícios.</p><form id="ativo-form" class="form-painel" novalidate><input type="hidden" id="ativo-id"><div class="campos"><label>Nome<input id="ativo-nome" required maxlength="80"></label><label>Categoria<input id="ativo-categoria" required maxlength="60"></label><label>Responsável<input id="ativo-responsavel" required maxlength="80"></label><label>Importância<select id="ativo-importancia"><option>Crítica</option><option>Alta</option><option selected>Média</option><option>Baixa</option></select></label><label>Situação<select id="ativo-situacao"><option>Ativo</option><option>Em revisão</option><option>Inativo</option></select></label><label class="largo">Descrição<textarea id="ativo-descricao" required maxlength="300" rows="2"></textarea></label></div><div class="acoes"><button type="submit">Salvar ativo</button><button type="button" class="sec" id="ativo-cancelar">Limpar</button></div><p class="mensagem" id="ativo-mensagem" role="status" aria-live="polite"></p></form><div class="rolagem"><table><thead><tr><th>Ativo</th><th>Categoria / descrição</th><th>Responsável</th><th>Importância</th><th>Situação</th><th>Ações</th></tr></thead><tbody id="ativos-lista"></tbody></table></div></section>
-<section><h2>Cadastro e avaliação de riscos</h2><p>A pontuação é calculada automaticamente: probabilidade × impacto. Classificações: 1–4 Baixo, 5–9 Moderado, 10–15 Alto e 16–25 Crítico.</p><form id="risco-form" class="form-painel" novalidate><input type="hidden" id="risco-id"><div class="campos"><label>Nome do risco<input id="risco-nome" required maxlength="100"></label><label>Ativo relacionado<select id="risco-ativo" required></select></label><label>Probabilidade (1–5)<select id="risco-probabilidade"><option value="1">1 — Rara</option><option value="2">2 — Improvável</option><option value="3" selected>3 — Possível</option><option value="4">4 — Provável</option><option value="5">5 — Quase certa</option></select></label><label>Impacto (1–5)<select id="risco-impacto"><option value="1">1 — Insignificante</option><option value="2">2 — Menor</option><option value="3" selected>3 — Moderado</option><option value="4">4 — Maior</option><option value="5">5 — Severo</option></select></label><p class="pontuacao largo" id="risco-pontuacao" aria-live="polite"></p><label class="largo">Descrição da ameaça<input id="risco-ameaca" required maxlength="220"></label><label class="largo">Causa<input id="risco-causa" required maxlength="220"></label><label class="largo">Vulnerabilidade<input id="risco-vulnerabilidade" required maxlength="220"></label><label class="largo">Medida de tratamento<textarea id="risco-medida" required maxlength="300" rows="2"></textarea></label><label>Responsável<input id="risco-responsavel" required maxlength="80"></label><label>Prazo<input id="risco-prazo" type="date" required></label><label>Status<select id="risco-status"><option>Pendente</option><option>Em andamento</option><option>Tratado</option></select></label><label class="largo">Evidência do tratamento<textarea id="risco-evidencia" maxlength="300" rows="2" placeholder="Ex.: revisão registrada, cópia restaurada em exercício fictício"></textarea></label></div><div class="acoes"><button type="submit">Salvar risco</button><button type="button" class="sec" id="risco-cancelar">Limpar</button></div><p class="mensagem" id="risco-mensagem" role="status" aria-live="polite"></p></form><div class="rolagem"><table><thead><tr><th>Risco / ativo</th><th>Ameaça, causa e vulnerabilidade</th><th>Probabilidade × impacto</th><th>Tratamento / evidência</th><th>Responsável / prazo</th><th>Status</th><th>Ações</th></tr></thead><tbody id="riscos-lista"></tbody></table></div></section>
-<section><h2>Melhoria contínua: ciclo PDCA</h2><div class="pdca"><article><h3>Plan — Planejar</h3><p>Definir escopo, identificar ativos e avaliar riscos com critérios consistentes.</p></article><article><h3>Do — Executar</h3><p>Aplicar medidas de tratamento e atribuir responsáveis e prazos.</p></article><article><h3>Check — Verificar</h3><p>Acompanhar indicadores, evidências e se os controles reduziram os riscos.</p></article><article><h3>Act — Agir e melhorar</h3><p>Corrigir lacunas, atualizar avaliações e iniciar um novo ciclo de melhoria.</p></article></div></section>
-</main><footer>Projeto educativo da dupla. Dados e credenciais fictícios para fins educativos.<br>Feito por Jorge Victor e Maria Antonia.</footer><script src="js/gestao-riscos.js"></script>
-</body></html>
+    <a class="pular" href="#conteudo">Ir para o conteúdo</a>
+    <header class="topo">
+        <div class="in">
+            <div class="marca">CyberStore Security <small>Missão CyberDev • Dia 03</small></div>
+            <nav aria-label="Principal">
+                <a href="index.html">Painel</a>
+                <a href="malware.html">Tipos de Malware</a>
+                <a href="ameacas.html">Ameaças e Acesso</a>
+                <a href="gestao-riscos.html" aria-current="page">Gestão de Riscos</a>
+                <a href="controles-seguranca.html">Controle de Segurança</a>
+            </nav>
+        </div>
+    </header>
+    <main id="conteudo">
+        <h1>Gestão de riscos da informação</h1>
+        <p class="lead">Painel educativo para inventariar ativos, avaliar riscos e acompanhar ações de tratamento da
+            CyberStore.</p>
+        <p class="aviso"><strong>Simulação acadêmica.</strong> Os dados são fictícios e ficam neste navegador. Este
+            projeto não representa uma certificação ISO/IEC 27001.</p>
+        <section aria-labelledby="indicadores-titulo">
+            <h2 id="indicadores-titulo">Painel de acompanhamento</h2>
+            <div id="metricas" class="metricas" aria-live="polite"></div>
+            <div class="graficos">
+                <article class="painel">
+                    <h3>Riscos por classificação</h3>
+                    <div id="grafico-riscos" class="grafico" role="img"
+                        aria-label="Gráfico de riscos por classificação"></div>
+                </article>
+                <article class="painel">
+                    <h3>Tratamentos por status</h3>
+                    <div id="grafico-status" class="grafico" role="img" aria-label="Gráfico de tratamentos por status">
+                    </div>
+                </article>
+            </div>
+        </section>
+        <section>
+            <h2>Escopo do SGSI</h2>
+            <p>O escopo educativo cobre a aplicação web CyberStore, banco de dados, servidor, repositório de código,
+                contas de usuários e infraestrutura de rede usados para operar e manter a loja.</p>
+            <h3>Objetivos de segurança da informação</h3>
+            <ul>
+                <li><strong>Confidencialidade:</strong> restringir dados de clientes e credenciais a pessoas
+                    autorizadas.</li>
+                <li><strong>Integridade:</strong> manter código, pedidos e cadastros corretos e protegidos contra
+                    alterações indevidas.</li>
+                <li><strong>Disponibilidade:</strong> manter a aplicação e os dados acessíveis, com cópias de segurança
+                    verificadas.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Inventário de ativos</h2>
+            <p>Cadastre, edite ou remova ativos. Os cinco ativos iniciais são exemplos fictícios.</p>
+            <form id="ativo-form" class="form-painel" novalidate><input type="hidden" id="ativo-id">
+                <div class="campos"><label>Nome<input id="ativo-nome" required
+                            maxlength="80"></label><label>Categoria<input id="ativo-categoria" required
+                            maxlength="60"></label><label>Responsável<input id="ativo-responsavel" required
+                            maxlength="80"></label><label>Importância<select id="ativo-importancia">
+                            <option>Crítica</option>
+                            <option>Alta</option>
+                            <option selected>Média</option>
+                            <option>Baixa</option>
+                        </select></label><label>Situação<select id="ativo-situacao">
+                            <option>Ativo</option>
+                            <option>Em revisão</option>
+                            <option>Inativo</option>
+                        </select></label><label class="largo">Descrição<textarea id="ativo-descricao" required
+                            maxlength="300" rows="2"></textarea></label></div>
+                <div class="acoes"><button type="submit">Salvar ativo</button><button type="button" class="sec"
+                        id="ativo-cancelar">Limpar</button></div>
+                <p class="mensagem" id="ativo-mensagem" role="status" aria-live="polite"></p>
+            </form>
+            <div class="rolagem">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Ativo</th>
+                            <th>Categoria / descrição</th>
+                            <th>Responsável</th>
+                            <th>Importância</th>
+                            <th>Situação</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ativos-lista"></tbody>
+                </table>
+            </div>
+        </section>
+        <section>
+            <h2>Cadastro e avaliação de riscos</h2>
+            <p>A pontuação é calculada automaticamente: probabilidade × impacto. Classificações: 1–4 Baixo, 5–9
+                Moderado, 10–15 Alto e 16–25 Crítico.</p>
+            <form id="risco-form" class="form-painel" novalidate><input type="hidden" id="risco-id">
+                <div class="campos"><label>Nome do risco<input id="risco-nome" required
+                            maxlength="100"></label><label>Ativo relacionado<select id="risco-ativo"
+                            required></select></label><label>Probabilidade (1–5)<select id="risco-probabilidade">
+                            <option value="1">1 — Rara</option>
+                            <option value="2">2 — Improvável</option>
+                            <option value="3" selected>3 — Possível</option>
+                            <option value="4">4 — Provável</option>
+                            <option value="5">5 — Quase certa</option>
+                        </select></label><label>Impacto (1–5)<select id="risco-impacto">
+                            <option value="1">1 — Insignificante</option>
+                            <option value="2">2 — Menor</option>
+                            <option value="3" selected>3 — Moderado</option>
+                            <option value="4">4 — Maior</option>
+                            <option value="5">5 — Severo</option>
+                        </select></label>
+                    <p class="pontuacao largo" id="risco-pontuacao" aria-live="polite"></p><label
+                        class="largo">Descrição da ameaça<input id="risco-ameaca" required
+                            maxlength="220"></label><label class="largo">Causa<input id="risco-causa" required
+                            maxlength="220"></label><label class="largo">Vulnerabilidade<input
+                            id="risco-vulnerabilidade" required maxlength="220"></label><label class="largo">Medida de
+                        tratamento<textarea id="risco-medida" required maxlength="300"
+                            rows="2"></textarea></label><label>Responsável<input id="risco-responsavel" required
+                            maxlength="80"></label><label>Prazo<input id="risco-prazo" type="date"
+                            required></label><label>Status<select id="risco-status">
+                            <option>Pendente</option>
+                            <option>Em andamento</option>
+                            <option>Tratado</option>
+                        </select></label><label class="largo">Evidência do tratamento<textarea id="risco-evidencia"
+                            maxlength="300" rows="2"
+                            placeholder="Ex.: revisão registrada, cópia restaurada em exercício fictício"></textarea></label>
+                </div>
+                <div class="acoes"><button type="submit">Salvar risco</button><button type="button" class="sec"
+                        id="risco-cancelar">Limpar</button></div>
+                <p class="mensagem" id="risco-mensagem" role="status" aria-live="polite"></p>
+            </form>
+            <div class="rolagem">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Risco / ativo</th>
+                            <th>Ameaça, causa e vulnerabilidade</th>
+                            <th>Probabilidade × impacto</th>
+                            <th>Tratamento / evidência</th>
+                            <th>Responsável / prazo</th>
+                            <th>Status</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="riscos-lista"></tbody>
+                </table>
+            </div>
+        </section>
+        <section>
+            <h2>Melhoria contínua: ciclo PDCA</h2>
+            <div class="pdca">
+                <article>
+                    <h3>Plan — Planejar</h3>
+                    <p>Definir escopo, identificar ativos e avaliar riscos com critérios consistentes.</p>
+                </article>
+                <article>
+                    <h3>Do — Executar</h3>
+                    <p>Aplicar medidas de tratamento e atribuir responsáveis e prazos.</p>
+                </article>
+                <article>
+                    <h3>Check — Verificar</h3>
+                    <p>Acompanhar indicadores, evidências e se os controles reduziram os riscos.</p>
+                </article>
+                <article>
+                    <h3>Act — Agir e melhorar</h3>
+                    <p>Corrigir lacunas, atualizar avaliações e iniciar um novo ciclo de melhoria.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+    <footer>Projeto educativo da dupla. Dados e credenciais fictícios para fins educativos.<br>Feito por Jorge Victor e
+        Maria Antonia.</footer>
+    <script src="js/gestao-riscos.js"></script>
+</body>
+
+</html>

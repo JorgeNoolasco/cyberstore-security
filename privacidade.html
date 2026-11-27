@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Central de Privacidade educativa da CyberStore Security.">
+  <title>CyberStore Security | Central de Privacidade</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/privacidade.css">
+</head>
+
+<body>
+  <a class="pular" href="#conteudo">Ir para o conteúdo</a>
+  <header class="topo">
+    <div class="in">
+      <div class="marca">CyberStore Security <small>Missão CyberDev • Dia 05</small></div>
+      <nav aria-label="Principal">
+        <a href="index.html">Painel</a>
+        <a href="malware.html">Tipos de Malware</a>
+        <a href="ameacas.html">Ameaças e Acesso</a>
+        <a href="gestao-riscos.html">Gestão de Riscos</a>
+        <a href="controles-seguranca.html">Controle de Segurança</a>
+        <a href="privacidade.html" aria-current="page">Privacidade</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo" class="privacidade">
+    <p class="privacidade__selo">LGPD • PROTEÇÃO DE DADOS PESSOAIS</p>
+    <h1>Central de Privacidade</h1>
+    <p class="lead">A CyberStore Security valoriza a privacidade e apresenta, nesta página educativa, como os dados
+      pessoais podem ser utilizados em uma compra e como o titular pode exercer seus direitos.</p>
+    <p class="aviso"><strong>Ambiente de demonstração:</strong> utilize somente dados fictícios. Os formulários exibem
+      mensagens simuladas e não enviam nem armazenam informações em servidor ou banco de dados.</p>
+
+    <section class="privacidade__secao" aria-labelledby="cadastro-titulo">
+      <h2 id="cadastro-titulo">1. Cadastro para compra com entrega</h2>
+      <p>Os campos abaixo foram limitados às informações necessárias para identificar o destinatário, comunicar
+        informações do pedido e realizar a entrega.</p>
+      <form id="form-compra" class="formulario">
+        <div class="campo">
+          <label for="compra-nome">Nome completo</label>
+          <input id="compra-nome" name="nome" type="text" autocomplete="name" maxlength="100" required>
+          <small>Finalidade: identificação do destinatário do pedido.</small>
+        </div>
+        <div class="campo">
+          <label for="compra-email">E-mail</label>
+          <input id="compra-email" name="email" type="email" autocomplete="email" maxlength="150" required>
+          <small>Finalidade: comunicação sobre a compra e o andamento do pedido.</small>
+        </div>
+        <div class="campo campo--amplo">
+          <label for="compra-endereco">Endereço de entrega</label>
+          <input id="compra-endereco" name="endereco" type="text" autocomplete="street-address" maxlength="180"
+            required>
+          <small>Finalidade: encaminhamento do produto ao destinatário.</small>
+        </div>
+        <button type="submit">Simular cadastro</button>
+        <p id="compra-status" class="mensagem" role="status" aria-live="polite"></p>
+      </form>
+      <div class="tabela-rolagem">
+        <table>
+          <thead>
+            <tr>
+              <th>Dado</th>
+              <th>Finalidade</th>
+              <th>Base legal proposta</th>
+              <th>Critério de retenção</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Nome</td>
+              <td>Identificar destinatário</td>
+              <td>Execução de contrato</td>
+              <td>Enquanto necessário à compra e obrigações aplicáveis</td>
+            </tr>
+            <tr>
+              <td>E-mail</td>
+              <td>Comunicar informações do pedido</td>
+              <td>Execução de contrato</td>
+              <td>Durante o atendimento e prazos legais pertinentes</td>
+            </tr>
+            <tr>
+              <td>Endereço</td>
+              <td>Realizar a entrega</td>
+              <td>Execução de contrato</td>
+              <td>Enquanto necessário à entrega e obrigações aplicáveis</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="nota">A base legal é uma proposta para o cenário ilustrativo. Em uma operação real, o controlador deve
+        avaliar a finalidade e a hipótese legal adequada para cada tratamento.</p>
+    </section>
+
+    <section class="privacidade__secao" aria-labelledby="aviso-titulo">
+      <h2 id="aviso-titulo">2. Aviso de privacidade</h2>
+      <div class="cartao">
+        <h3>Quais dados podem ser solicitados?</h3>
+        <p>Nome completo, endereço de e-mail e endereço de entrega, quando necessários para uma compra.</p>
+        <h3>Por que utilizamos esses dados?</h3>
+        <p>Para identificar o destinatário, comunicar informações relacionadas ao pedido e viabilizar a entrega.</p>
+        <h3>Qual é a base legal?</h3>
+        <p>No contexto de uma compra, o tratamento dos dados necessários pode estar fundamentado na execução de contrato
+          ou em procedimentos preliminares relacionados a contrato. Outras finalidades exigem avaliação própria da base
+          legal aplicável.</p>
+        <h3>Por quanto tempo os dados ficam armazenados?</h3>
+        <p>Os dados devem ser mantidos somente pelo período necessário às finalidades informadas e às obrigações legais
+          ou regulatórias aplicáveis. Encerrada a necessidade, devem ser eliminados ou anonimizados, ressalvadas as
+          hipóteses legais de conservação.</p>
+        <h3>Os dados são compartilhados?</h3>
+        <p>Em uma operação real, eventual compartilhamento deve ser limitado ao necessário, possuir finalidade legítima
+          e observar uma hipótese legal adequada.</p>
+        <h3>Como protegemos as informações?</h3>
+        <p>As medidas propostas incluem controle de acesso, autenticação, restrição de privilégios, proteção de sessões,
+          registro de eventos relevantes e procedimentos de resposta a incidentes.</p>
+      </div>
+    </section>
+
+    <section class="privacidade__secao" aria-labelledby="direitos-titulo">
+      <h2 id="direitos-titulo">3. Seus direitos como titular</h2>
+      <p>Nos termos do artigo 18 da LGPD, o titular pode solicitar, conforme as condições legais, confirmação da
+        existência de tratamento, acesso, correção, anonimização, bloqueio, eliminação de dados desnecessários ou
+        tratados em desconformidade, portabilidade e outras providências previstas na lei.</p>
+      <p><strong>Atenção à eliminação:</strong> a solicitação não significa que todos os dados serão apagados
+        automaticamente. A organização deve analisar a finalidade e verificar se existe hipótese legal que permita ou
+        exija a conservação de determinadas informações.</p>
+    </section>
+
+    <section class="privacidade__secao" aria-labelledby="solicitacao-titulo">
+      <h2 id="solicitacao-titulo">4. Canal simulado de atendimento ao titular</h2>
+      <p>Preencha o formulário com informações fictícias para simular uma solicitação de privacidade.</p>
+      <form id="form-titular" class="formulario">
+        <div class="campo">
+          <label for="titular-nome">Nome</label>
+          <input id="titular-nome" name="nome" type="text" maxlength="100" required>
+        </div>
+        <div class="campo">
+          <label for="titular-email">E-mail para retorno</label>
+          <input id="titular-email" name="email" type="email" maxlength="150" required>
+        </div>
+        <div class="campo campo--amplo">
+          <label for="titular-tipo">Tipo de solicitação</label>
+          <select id="titular-tipo" name="tipo" required>
+            <option value="">Selecione uma opção</option>
+            <option value="Consulta dos dados pessoais">Consulta dos dados pessoais</option>
+            <option value="Correção de dados pessoais">Correção de dados pessoais</option>
+            <option value="Solicitação de eliminação">Solicitação de eliminação de dados pessoais</option>
+          </select>
+        </div>
+        <div class="campo campo--amplo">
+          <label for="titular-descricao">Descrição da solicitação</label>
+          <textarea id="titular-descricao" name="descricao" rows="4" maxlength="500" required></textarea>
+        </div>
+        <button type="submit">Enviar solicitação simulada</button>
+        <p id="titular-status" class="mensagem" role="status" aria-live="polite"></p>
+      </form>
+      <p class="nota">Canal exclusivamente demonstrativo. Em uma aplicação real, a organização precisaria confirmar a
+        identidade do solicitante de forma proporcional, registrar e analisar a demanda e responder dentro das condições
+        legais.</p>
+    </section>
+
+    <section class="privacidade__secao" aria-labelledby="modelo-titulo">
+      <h2 id="modelo-titulo">5. Modelo lógico proposto — desafio avançado</h2>
+      <p>O modelo conceitual considera um relacionamento de um para muitos (1:N): um cliente pode registrar várias
+        solicitações, e cada solicitação pertence a um único cliente.</p>
+      <div class="modelo">
+        <article class="modelo__entidade">
+          <h3>CLIENTE</h3>
+          <p><strong>PK</strong> id_cliente — INT</p>
+          <p>nome — VARCHAR(100)</p>
+          <p>email — VARCHAR(150)</p>
+        </article>
+        <p class="modelo__relacao">1 ───────── N</p>
+        <article class="modelo__entidade">
+          <h3>SOLICITACAO_TITULAR</h3>
+          <p><strong>PK</strong> id_solicitacao — INT</p>
+          <p><strong>FK</strong> id_cliente — INT</p>
+          <p>tipo_solicitacao — VARCHAR(50)</p>
+          <p>descricao — TEXT</p>
+          <p>status — VARCHAR(30)</p>
+          <p>data_solicitacao — DATETIME</p>
+          <p>data_conclusao — DATETIME, permite nulo</p>
+        </article>
+      </div>
+      <h3>Controles de acesso propostos</h3>
+      <ul>
+        <li><strong>Cliente:</strong> consulta apenas suas próprias solicitações.</li>
+        <li><strong>Atendente:</strong> visualiza e trata solicitações autorizadas.</li>
+        <li><strong>Administrador:</strong> gerencia usuários, permissões e auditoria.</li>
+        <li>Aplicar autenticação, autorização por perfil, menor privilégio e proteção de sessões.</li>
+      </ul>
+      <h3>Retenção e registros de eventos</h3>
+      <p>Manter dados pelo período necessário às finalidades e obrigações aplicáveis. Registrar eventos relevantes, como
+        acesso, alteração de status e conclusão de solicitações, com acesso restrito e proteção contra alterações
+        indevidas.</p>
+      <p>Uma entidade complementar <code>LOG_EVENTO</code> pode conter: <code>id_log</code>, <code>id_usuario</code>,
+        <code>acao</code>, <code>data_hora</code>, <code>entidade</code> e <code>resultado</code>. Os registros não
+        devem incluir senhas nem dados pessoais desnecessários.</p>
+    </section>
+
+    <section class="privacidade__secao" aria-labelledby="creditos-titulo">
+      <h2 id="creditos-titulo">6. Fontes e licenças</h2>
+      <ul>
+        <li>Lei nº 13.709/2018 — <a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm"
+            target="_blank" rel="noopener noreferrer">Planalto</a>.</li>
+        <li>Autoridade Nacional de Proteção de Dados — <a href="https://www.gov.br/anpd/pt-br" target="_blank"
+            rel="noopener noreferrer">Portal da ANPD</a>.</li>
+        <li>Creative Commons — <a href="https://creativecommons.org/" target="_blank" rel="noopener noreferrer">Licenças
+            e atribuições</a>.</li>
+        <li>Código do projeto CyberStore Security: consultar o arquivo <code>LICENSE.md</code> (MIT). Imagens externas
+          devem ter sua licença verificada individualmente.</li>
+      </ul>
+    </section>
+  </main>
+  <footer>Projeto educativo da dupla. Dados fictícios. Os formulários desta página não enviam nem armazenam
+    informações.<br>Feito por Jorge Victor e Maria Antonia.</footer>
+  <script src="js/privacidade.js"></script>
+</body>
+
+</html>
